@@ -1,2 +1,4 @@
 1. todolist :https://codepen.io/AlinaPant/pen/weoVMM
 2. task manager : https://dribbble.com/shots/1956586-Filter-Menu
+3. images carousel : https://codepen.io/diomed/pen/OmmEaK
+4. basic navbar : https://codepen.io/IamSwap/pen/VLqaKE

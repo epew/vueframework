@@ -1,3 +1,131 @@
-#todolist{
-  position: relative;
+* {
+	@include box-sizing;
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+	font-family: $font, sans-serif;
+	font-size: $size;
+	overflow-x: hidden;
+	@include gradient($btn, $base);
+}
+
+#toDoList {
+	position: relative;
+	width: 300px;
+	padding: 50px 40px;
+	margin: auto;
+	margin-top: 55px;
+	color: $text;
+	background: $bg_none;
+	@include box-shadow(0 10px 30px $shadow);
+	@include transform(translate3d(0, -5px, 0));
+	@include transition(all.4s ease-out);
+
+	&:hover {
+		@include hover;
+		@include transform(translate3d(0, 5px, 0));
+	}
+}
+
+.title {
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 1px;
+	margin-bottom: 16px;
+}
+
+.make {
+	padding: 5px 8px;
+	outline: none;
+	width: 80%;
+	text-transform: uppercase;
+	background: $bg_none;
+	border: none;
+	border-bottom: 2px solid $shadow;
+
+	@include placeholder {
+		color: $input_box;;
+	}
+}
+
+input[type="submit"] {
+	width: 15%;
+	padding: 5px 2px;
+	outline: none;
+	text-align: center;
+	background: $bg_none;
+	color: $input_box;
+	border: none;
+	@include box-shadow(0 1px 3px 1px $shadow);
+	@include transition(all.4s ease-out);
+
+	&:hover {
+		@include hover;
+	}
+}
+
+.forAddItems {
+	margin-bottom: 30px;
+}
+
+.list {
+	list-style: none;
+	font-weight: 300;
+	letter-spacing: 0.6px;
+
+	li {
+		margin-left: $padding_check;
+		margin-bottom: 5px;
+	}
+
+	span {
+		position: relative;
+		display: inline-block;
+		line-height: 1.4;
+	}
+}
+
+.btn {
+	cursor: pointer;
+}
+
+label {
+	position: relative;
+	display: inline-block;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+
+	&:after {
+		content: "";
+		position:absolute;
+		top:3px;
+		left: -$padding_check;
+		display:block;
+		height: $size_check;
+		width: $size_check;
+		border: 1px solid $check_box;
+		background: $bg_none;
+		cursor: pointer;
+		outline: none;
+	}
+}
+
+input[type=checkbox] {
+	display:none;
+
+	&:checked + span {
+		text-decoration: line-through;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: -$padding_check - 2px;
+			width: $size_checked;
+			height: $size_checked;
+			background: $check_box;
+		}
+	}
 }

@@ -1,0 +1,16 @@
+$text: #fff;
+$font: "Open Sans";
+$size: 16px;
+
+$btn: #5FBDA8; /* cyan*/
+$base: #1E3354; /* blue*/
+/* $bg_list: #52424A // violet*/
+
+$bg_none: rgba(255, 255, 255, 0);
+$shadow: rgba(0, 0, 0, .3);
+$input_box: #32343c;
+
+$check_box: darken($text, 20%);
+$padding_check: 30px;
+$size_check: 15px;
+$size_checked: $size_check;
