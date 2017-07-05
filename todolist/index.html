@@ -7,30 +7,26 @@
     <style rel="stylesheet" type="text/css" href="./css/main.css"></style>
   </head>
   <body>
+    <div id="toDoList">
+    	<h1 class="title">{{title}}</h1>
 
-    <div id="todolist">
-
-      <h1 class="title">{{title}}</div>
-        
-      <div class = "addItems">
-        <input type="text" autocomplete="off" placeholder="what else to add" v-model = "tasks.name" @keyup.enter = "newItem" class= "make">
-        <input type = "submit" value="Add" class="btn btn_add" @click = "newItem">
-      </div>
-
-      <ul class="list">
-        <li>
-          <label>
-            <input type="checkbox">
-            <span>{{task.name}}</span>
-          </label>
-          <span>|</span>
-          <span @click = "delItem(task)" class="btn">{{task.del}}</span>
-        </li>
-      </ul>
-
+    	<div class="forAddItems">
+    		<input type="text" autocomplete="off" placeholder="What else to add?" v-model="tasks.name" @keyup.enter="newItem" class="make">
+    		<input type="submit" value="Add" class="btn btn_add" @click="newItem">
+    	</div>
+    	<ul class="list">
+    		<li class="list_item" v-for="task in tasks">
+    			<label>
+    				<input type="checkbox">
+    				<span>{{task.name}}</span>
+    			</label>
+    			<span>/</span>
+    			<span @click="delItem(task)" class="btn">{{task.del}}</span>
+    		</li>
+    	</ul>
     </div>
 
-    <script src="./js/vue.js"></script>
+    <script src="./js/vue.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
